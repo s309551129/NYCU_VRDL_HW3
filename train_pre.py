@@ -16,6 +16,7 @@ CATEGORIES = [
     },
 ]
 
+
 def main():
     coco_output_train = {
         "images": [],
@@ -30,16 +31,15 @@ def main():
     train = True
     image_id = 1
     segmentation_id = 1
-    
+
     root_dirs = os.listdir(root)
     root_dirs.sort()
     for dir in root_dirs:
-        """
         if train == True and image_id == 24:
             train = False
             image_id = 1
             segmentation_id = 1
-        """ 
+
         image_filename = os.path.join(root, dir, "images", dir)+".png"
         image = Image.open(image_filename)
         image_info = pycococreatortools.create_image_info(image_id, os.path.basename(image_filename), image.size)
@@ -49,7 +49,7 @@ def main():
         else: # validation
             coco_output_valid["images"].append(image_info)
             image.save(os.path.join(img_save_valid_root, dir)+".png")
-        
+
         mask_path = os.path.join(root, dir, "masks")
         mask_files = os.listdir(mask_path)
         mask_files.sort()
@@ -70,13 +70,13 @@ def main():
                     coco_output_valid["annotations"].append(annotation_info)
 
             segmentation_id = segmentation_id + 1
-        
+
         image_id = image_id + 1
-    
+
     with open('{}/all_train_coco_format.json'.format(ann_save_root), 'w') as output_json_file:
         json.dump(coco_output_train, output_json_file, indent=4)
-    #with open('{}/valid_coco_format.json'.format(ann_save_root), 'w') as output_json_file:
-    #    json.dump(coco_output_valid, output_json_file, indent=4)
+    with open('{}/valid_coco_format.json'.format(ann_save_root), 'w') as output_json_file:
+        json.dump(coco_output_valid, output_json_file, indent=4)
 
 if __name__ == "__main__":
     main()

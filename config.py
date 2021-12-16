@@ -1,4 +1,4 @@
-#_base_ = './configs/mask_rcnn/mask_rcnn_r101_fpn_1x_coco.py'
+# _base_ = './configs/mask_rcnn/mask_rcnn_r101_fpn_1x_coco.py'
 _base_ = './configs/mask_rcnn/mask_rcnn_x101_64x4d_fpn_1x_coco.py'
 
 
@@ -47,7 +47,7 @@ model = dict(
             mask_thr_binary=0.5
         )
     ))
-    
+
 
 # pipeline
 img_norm_cfg = dict(
@@ -112,7 +112,7 @@ runner = dict(type='EpochBasedRunner', max_epochs=400)
 
 
 # pretrained weight
-#load_from = './weight/mask_rcnn_r101_fpn_mstrain-poly_3x_coco_20210524_200244-5675c317.pth'
+# load_from = './weight/mask_rcnn_r101_fpn_mstrain-poly_3x_coco_20210524_200244-5675c317.pth'
 load_from = './weight/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth'
 
 
@@ -121,7 +121,8 @@ log_config = dict(
     interval=20,
     hooks=[
         dict(type='TextLoggerHook')
-])
+    ]
+)
 
 # evaluation
-#evaluation = dict(metric=['segm'])
+# evaluation = dict(metric=['segm'])

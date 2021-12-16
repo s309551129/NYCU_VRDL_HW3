@@ -20,9 +20,9 @@ def get_coco_test():
         "annotations": [],
         "categories": CATEGORIES,
     }
-    
+
     return coco_output_test
-    
+
 
 def main():
     coco_output_test = get_coco_test()
