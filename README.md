@@ -32,7 +32,7 @@ ${mmdetection}
 test_pre.py
 train_pre.py
 ```
-You can run these commands to split the training data into training set and validation set, also tranfer binary mask into COCO format:
+You can run this commands to split the training data into training set and validation set, also tranfer binary mask into COCO format:
 ```
 python3 train_pre.py
 ```
