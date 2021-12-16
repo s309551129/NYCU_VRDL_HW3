@@ -69,3 +69,7 @@ mmdetection
 ```
 https://github.com/open-mmlab/mmdetection
 ```
+pycococreator
+```
+https://github.com/waspinator/pycococreator
+```
