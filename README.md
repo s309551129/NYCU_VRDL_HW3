@@ -36,7 +36,7 @@ You can run this command to split the training data into training set and valida
 ```
 python3 train_pre.py
 ```
-You can run this command to get the testing image's ids json file:
+You can run this command to get the testing image's ids json file in COCO format:
 ```
 python3 test_pre.py
 ```
