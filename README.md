@@ -56,7 +56,7 @@ https://drive.google.com/drive/folders/1tPnZFVozy8B1RHGlYduaWGgP8Ds9TUwo
 ```
 You can run this command to generate answer.segm.txt:
 ```
-python3 ./mmdetection/tools/test.py config.py nuclei.pth --format-only --options jsonfile_prefix=../answer.json
+python3 ./mmdetection/tools/test.py config.py {weight}.pth --format-only --options jsonfile_prefix=../answer.json
 ```
 # Results
 mAP 0.5, 0.95 => 0.243091 <br>
