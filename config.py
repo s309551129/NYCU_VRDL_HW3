@@ -16,7 +16,7 @@ model = dict(
             loss_mask=dict(
                 type='CrossEntropyLoss',
                 use_mask=True,
-                loss_weight=18.0
+                loss_weight=8.0
             )
         ),
     ),
